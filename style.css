@@ -1,0 +1,201 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F8F4EE;
+    color:#4E342E;
+}
+
+/* Navbar */
+
+.navbar{
+    background:#5C4033;
+    padding:12px 0;
+    position: fixed; /* biar nempel atas */
+    width: 100%;
+    z-index: 999;
+}
+
+.navbar-brand{
+    color:#fff;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.navbar-brand:hover{
+    color:#F6D8A8;
+}
+
+.navbar .nav-link{
+    color:#fff;
+    margin-left:15px;
+    font-weight:500;
+}
+
+.navbar .nav-link:hover{
+    color:#F6D8A8;
+}
+
+/* ===== HERO DENGAN BACKGROUND GAMBAR ===== */
+/* ===== HERO BACKGROUND PENDEK AJA ===== /* ===== HERO BACKGROUND PENDEK ===== */
+#home.hero {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('./canai.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 450px; /* atur tinggi di sini */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 20px 80px;
+}
+
+/* INI YG BIKIN PUTIH SEMUA */
+#home.hero h1 {
+    color: #ffffff !important; /* PUTIH PAKSA */
+    font-size: 3rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* bayangan biar nimbul */
+}
+
+#home.hero h4 {
+    color: #F6D8A8 !important; /* KREM EMAS */
+    font-size: 1.3rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+#home.hero p {
+    color: #ffffff !important; /* PUTIH PAKSA */
+    font-size: 1rem;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
+}
+
+/* Button */
+
+.btn-warning{
+    background:#C68B59;
+    border:none;
+    color:#fff;
+}
+
+.btn-warning:hover{
+    background:#A97142;
+}
+
+/* Section */
+
+section{
+    padding:70px 0;
+}
+
+h2{
+    color:#5C4033;
+    font-weight:bold;
+}
+
+/* Tabs */
+
+.nav-pills .nav-link{
+    color:#5C4033;
+    border-radius:20px;
+    margin:5px;
+}
+
+.nav-pills .nav-link.active{
+    background:#C68B59;
+}
+
+/* Card */
+
+.card{
+    border:none;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    height:200px;
+    object-fit:cover;
+}
+
+.card h5{
+    color:#5C4033;
+    font-weight:bold;
+}
+
+.card h6{
+    color:#C68B59;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* Form */
+
+.form-control{
+    border-radius:10px;
+}
+
+textarea{
+    resize:none;
+}
+
+/* Tentang */
+
+#tentang ul{
+    padding-left:18px;
+}
+
+/* Maps */
+
+iframe{
+    border-radius:10px;
+    margin-top:15px;
+}
+
+/* Footer */
+
+footer{
+    background:#5C4033;
+    color:#fff;
+}
+
+/* Responsive */
+
+@media(max-width:991px){
+
+#home.hero{
+    text-align:center;
+    background-attachment: scroll; /* HP biar ga lag */
+}
+
+@media(max-width:768px){
+
+#home.hero h1{
+    font-size: 2.5rem;
+}
+
+#home.hero h4{
+    font-size: 1.3rem;
+}
+
+.card{
+    margin-bottom:15px;
+}
+
+}
