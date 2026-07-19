@@ -44,38 +44,23 @@ body{
     color:#F6D8A8;
 }
 
-/* ===== HERO DENGAN BACKGROUND GAMBAR ===== */
-/* ===== HERO BACKGROUND PENDEK AJA ===== /* ===== HERO BACKGROUND PENDEK ===== */
-#home.hero {
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('./canai.jpeg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    min-height: 450px; /* atur tinggi di sini */
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 100px 20px 80px;
-}
 
-/* INI YG BIKIN PUTIH SEMUA */
-#home.hero h1 {
-    color: #ffffff !important; /* PUTIH PAKSA */
+
+
+/* WARNA TULISAN */
+#page-home.hero h1 {
+    color: #ffffff !important; 
     font-size: 3rem;
     font-weight: 800;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8); /* bayangan biar nimbul */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
-
-#home.hero h4 {
-    color: #F6D8A8 !important; /* KREM EMAS */
+#page-home.hero h4 {
+    color: #F6D8A8 !important; 
     font-size: 1.3rem;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
 }
-
-#home.hero p {
-    color: #ffffff !important; /* PUTIH PAKSA */
+#page-home.hero p {
+    color: #ffffff !important; 
     font-size: 1rem;
     text-shadow: 1px 1px 6px rgba(0,0,0,0.8);
 }
@@ -115,7 +100,6 @@ h2{
     background:#C68B59;
 }
 
-/* Card */
 
 .card{
     border:none;
@@ -123,6 +107,9 @@ h2{
     overflow:hidden;
     transition:.3s;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
+    height: 100%; /* KUNCI 1: BIKIN TINGGI SAMA */
+    display: flex; /* KUNCI 2: FLEX */
+    flex-direction: column; /* KUNCI 3: SUSUN KE BAWAH */
 }
 
 .card:hover{
@@ -130,8 +117,16 @@ h2{
 }
 
 .card img{
-    height:200px;
+    height:220px; /* TINGGI GAMBAR DISAMAIN */
     object-fit:cover;
+    width: 100%;
+}
+
+.card-body{ /* TAMBAHAN BARU */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card h5{
@@ -183,7 +178,7 @@ footer{
     text-align:center;
     background-attachment: scroll; /* HP biar ga lag */
 }
-
+} 
 @media(max-width:768px){
 
 #home.hero h1{
@@ -198,4 +193,157 @@ footer{
     margin-bottom:15px;
 }
 
+}
+
+.card-paket {
+    background: #5C4033;
+    color: #fff;
+    border-radius: 15px;
+    padding: 25px 20px;
+    text-align: center;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* BIAR RAPI ATAS TENGAH BAWAH */
+    transition: .3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,.2);
+}
+.card-paket:hover { transform: translateY(-6px); background: #4E342E; }
+.card-paket .icon { font-size: 40px; color: #F6D8A8; margin-bottom: 10px; }
+.card-paket h5 { font-size: 18px; font-weight: 800; color: #F6D8A8; margin-bottom: 10px; }
+.card-paket p { font-size: 14px; margin-bottom: 15px; line-height: 1.5; flex-grow: 1; }
+.card-paket h6 { font-size: 18px; font-weight: bold; color: #F6D8A8; }
+
+/* CAROUSEL KOTAK DI TENGAH */
+#carouselCanai {
+    margin: 20px auto; /* AUTO BIAR KE TENGAH */
+    border-radius: 15px;
+    overflow: hidden;
+    max-width: 90%; /* INI KUNCINYA. DARI 100% JADI 90% */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+}
+
+.carousel-item img { 
+    height: 400px; 
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-caption { 
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    padding: 12px 15px; 
+    bottom: 15px; 
+    left: 15px;
+    right: 15px;
+}
+.carousel-caption h5 { 
+    color: #F6D8A8;
+    font-weight: 800; 
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+.carousel-caption p { 
+    color: #fff;
+    font-size: 12px;
+    margin: 0;
+}
+
+/* PANAH DI TENGAH VERTIKAL + ADA BULATAN */
+.carousel-control-prev, 
+.carousel-control-next {
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    bottom: auto !important;
+    height: 40px;
+    width: 40px;
+    background: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    margin: 0 10px; /* KASIH JARAK DARI TEPI */
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #F6D8A8;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+}
+
+/* VERSI HP */
+@media(max-width:768px){ 
+    #carouselCanai{ max-width: 95%; } 
+    .carousel-item img{ height: 200px; } 
+}
+
+
+.page {
+    display: none !important;
+}
+
+.page.active {
+    display: block !important;
+}
+
+body { background-color: #fffaf3; } 
+
+#page-home {
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('./canai.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    min-height: 80vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+
+    padding: 110px 20px 20px;
+}
+
+#page-home.active{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-menu{
+    padding-top: 100px !important;
+}
+
+#judulKeunggulan{
+    margin-top: 15px;
+}
+
+#page-tentang{
+    padding-top: 110px;
+    padding-bottom: 60px;
+}
+
+.btn-menu{
+    background: #C68B59;
+    color: white;
+    border: 2px solid #C68B59 ;
+    transition: 0.3s;
+}
+
+.btn-menu:hover{
+    background: #A97142;
+    border-color: #A97142;
+    color: white;
+}
+
+.btn-kontak{
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    transition: 0.3s;
+}
+
+.btn-kontak:hover{
+    background: white;
+    color: #5C4033;
 }
